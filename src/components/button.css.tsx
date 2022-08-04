@@ -20,7 +20,7 @@ export const ButtonTypes = styled("button", {
         border: "1px solid $primary",
         color: "White",
         "&:hover": {
-          backgroundColor: "$pLight",
+          backgroundColor: "$primary-light",
         },
       },
       secondary: {
@@ -28,7 +28,7 @@ export const ButtonTypes = styled("button", {
         border: "1px solid $secondary",
         color: "White",
         "&:hover": {
-          backgroundColor: "$sLight",
+          backgroundColor: "$secondary-light",
         },
       },
     },
@@ -70,7 +70,18 @@ export const ButtonTypes = styled("button", {
         background: "transparent",
         "&:hover": {
           color: "white",
-          background: "$pLight",
+          background: "$primary-light",
+        },
+      },
+    },
+    {
+      color: "primary",
+      plain: true,
+      css: {
+        color: "$primary",
+        border: "none",
+        "&:hover": {
+          background: "transparent",
         },
       },
     },
@@ -82,7 +93,7 @@ export const ButtonTypes = styled("button", {
         borderColor: "$secondary",
         "&:hover": {
           color: "white",
-          background: "$sLight",
+          background: "$secondary-light",
         },
       },
     },

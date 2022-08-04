@@ -6,7 +6,7 @@ const GlobalStyles = globalCss({
     padding: 0,
     fontFamily: "Roboto, sans-serif",
   },
-  "*": { boxSizing: "border-box" },
+  "*, :after, :before": { boxSizing: "border-box" },
   a: {
     textDecoration: "none",
     font: "inherit",

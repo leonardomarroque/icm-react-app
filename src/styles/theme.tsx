@@ -8,12 +8,16 @@ export const { styled, css } = createStitches({
   },
   theme: {
     colors: {
-      primary: "#ffb13b",
-      pLight: "#ffe36d",
-      pDark: "#c78200",
-      secondary: "#2f4858",
-      sLight: "#5a7385",
-      sDark: "#04212f",
+      background: "#222831",
+      support: "#A8B3BC",
+      text: "#EEEEEE",
+      "base-text": "#CDD0D5",
+      primary: "#00adb5",
+      "primary-light": "#5cdfe7",
+      "primary-dark": "#007d85",
+      secondary: "#393e46",
+      "secondary-light": "#636871",
+      "secondary-dark": "#13181f",
     },
     space: {
       1: "5px",
@@ -32,12 +36,15 @@ export const { styled, css } = createStitches({
     fontWeights: {},
     lineHeights: {},
     letterSpacings: {},
-    sizes: {
-
-    },
+    sizes: {},
     borderWidths: {},
     borderStyles: {},
-    radii: {},
+    radii: {
+      sm: "0.25rem",
+      md: "0.375rem",
+      lg: "0.5rem",
+      full: "9999px",
+    },
     shadows: {},
     zIndices: {},
     transitions: {},

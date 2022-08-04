@@ -33,7 +33,7 @@ function Footer() {
       </SocialMediaContainer>
       <Copyright>
         <Title>
-          © 2022 Copyright: <CompanyLink to="home">SemNome.com.br</CompanyLink>
+          © 2022 Copyright: <CompanyLink href="https://icm-app.netlify.app">icm-app.netlify.app</CompanyLink>
         </Title>
         <Title>
           Made with <HeartIcon icon="HeartIcon" /> by{" "}

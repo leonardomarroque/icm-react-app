@@ -1,21 +1,17 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { styled } from "../styles/theme";
 import { ReactComponent as Logo } from "../assets/svg-2.svg";
 import HeroIcon from "./hero-icon";
 
 export const NavContainer = styled("nav", {
   display: "flex",
-  backgroundColor: "$primary",
+  backgroundColor: "$background",
   height: "88px",
   justifyContent: "center",
   alignItems: "center",
   paddingLeft: "1rem",
   paddingRight: "1rem",
-  "@md": {
-    paddingLeft: "5rem",
-    paddingRight: "5rem",
-  },
 });
 
 export const Nav = styled("ul", {
@@ -23,16 +19,21 @@ export const Nav = styled("ul", {
   padding: "0",
   columnGap: ".5rem",
   listStyle: "none",
-  "@sm": {
+  "@md": {
     display: "flex",
   },
 });
 
-export const NavItem = styled(Link, {
+export const NavItem = styled(NavLink, {
   display: "block",
   padding: ".75rem 1.5rem",
-  color: "Black",
+  color: "$support",
   fontWeight: "700",
+  transition: "all 0.3s ease",
+  "&.active": {
+    borderBottom: "1px solid $primary",
+    color: "White",
+  },
 });
 
 export const NavWrapper = styled("div", {
@@ -40,7 +41,7 @@ export const NavWrapper = styled("div", {
   alignItems: "center",
   justifyContent: "space-between",
   width: "100%",
-  "@sm": {
+  "@md": {
     width: "1120px",
   },
 });
@@ -53,7 +54,7 @@ export const StyledLogo = styled(Logo, {
 export const AccessWrapper = styled("div", {
   display: "none",
   columnGap: ".5rem",
-  "@sm": {
+  "@md": {
     display: "flex",
   },
 });
@@ -64,11 +65,12 @@ export const StyledUserIcon = styled(HeroIcon, {
 });
 
 export const MobileButtonMenu = styled("button", {
-  display: "inline-flex",
+  display: "flex",
   background: "transparent",
   outline: "none",
   border: "none",
-  "@sm": {
+  cursor: "pointer",
+  "@md": {
     display: "none",
   },
 });
@@ -76,5 +78,5 @@ export const MobileButtonMenu = styled("button", {
 export const MobileIconMenu = styled(HeroIcon, {
   width: "3rem",
   height: "3rem",
-  fill: "$pDark",
+  fill: "$primary",
 });

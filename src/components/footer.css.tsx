@@ -17,7 +17,7 @@ export const Copyright = styled("div", {
   },
 });
 
-export const CompanyLink = styled(Link, {
+export const CompanyLink = styled("a", {
   fontWeight: "700",
 });
 
@@ -39,7 +39,7 @@ export const Title = styled("h1", {
 export const SocialIcon = styled(Icon, {
   width: "2rem",
   height: "2rem",
-  fill: "$pDark",
+  fill: "$secondary",
 });
 
 export const HeartIcon = styled(HeroIcon, {
@@ -54,6 +54,6 @@ export const Creator = styled("a", {
   color: "#453886",
   paddingBottom: ".25em",
   "&:hover": {
-    color: "Cyan",
+    color: "$primary",
   },
 });

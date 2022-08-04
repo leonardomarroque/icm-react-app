@@ -11,10 +11,9 @@ import {
   StyledLogo,
   StyledUserIcon,
 } from "./header.css";
-import HeroIcon from "./hero-icon";
 
 const navItems = [
-  { title: "Home", path: "home" },
+  { title: "Home", path: "/" },
   { title: "Usuários", path: "users" },
   { title: "Louvores", path: "praises" },
 ];
@@ -33,15 +32,15 @@ function Header() {
             ))}
           </Nav>
           <AccessWrapper>
-            <Button color="secondary" size="sm" plain>
+            <Button type="button" color="primary" size="sm" plain>
               <StyledUserIcon icon="UserIcon" outline /> entrar
             </Button>
-            <Button color="secondary" size="sm">
+            <Button type="button" color="primary" size="sm">
               criar conta
             </Button>
           </AccessWrapper>
           {/* Nav mobile menu */}
-          <MobileButtonMenu type="button">
+          <MobileButtonMenu type="button" aria-label="menu mobile">
             <MobileIconMenu icon="MenuIcon" outline />
           </MobileButtonMenu>
         </NavWrapper>
