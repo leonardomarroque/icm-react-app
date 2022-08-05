@@ -2,10 +2,10 @@ import React from "react";
 import { Button } from "./button";
 import {
   AccessWrapper,
+  HeaderContainer,
   MobileButtonMenu,
   MobileIconMenu,
   Nav,
-  NavContainer,
   NavItem,
   NavWrapper,
   StyledLogo,
@@ -20,8 +20,7 @@ const navItems = [
 
 function Header() {
   return (
-    <header>
-      <NavContainer>
+    <HeaderContainer>
         <NavWrapper>
           <StyledLogo />
           <Nav>
@@ -35,17 +34,16 @@ function Header() {
             <Button type="button" color="primary" size="sm" plain>
               <StyledUserIcon icon="UserIcon" outline /> entrar
             </Button>
-            <Button type="button" color="primary" size="sm">
+            <Button type="button" color="primary" size="sm" radius="lg" outline>
               criar conta
             </Button>
           </AccessWrapper>
           {/* Nav mobile menu */}
           <MobileButtonMenu type="button" aria-label="menu mobile">
-            <MobileIconMenu icon="MenuIcon" outline />
+            <MobileIconMenu icon="MenuIcon" />
           </MobileButtonMenu>
         </NavWrapper>
-      </NavContainer>
-    </header>
+    </HeaderContainer>
   );
 }
 

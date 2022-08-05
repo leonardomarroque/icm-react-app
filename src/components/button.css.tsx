@@ -59,6 +59,20 @@ export const ButtonTypes = styled("button", {
         padding: "1.5rem 2rem",
       },
     },
+    radius: {
+      sm: {
+        borderRadius: "$sm",
+      },
+      md: {
+        borderRadius: "$md",
+      },
+      lg: {
+        borderRadius: "$lg",
+      },
+      full: {
+        borderRadius: "$full",
+      },
+    },
   },
   compoundVariants: [
     {
@@ -70,7 +84,7 @@ export const ButtonTypes = styled("button", {
         background: "transparent",
         "&:hover": {
           color: "white",
-          background: "$primary-light",
+          background: "$primary",
         },
       },
     },
@@ -93,7 +107,7 @@ export const ButtonTypes = styled("button", {
         borderColor: "$secondary",
         "&:hover": {
           color: "white",
-          background: "$secondary-light",
+          background: "$secondary",
         },
       },
     },
@@ -109,4 +123,9 @@ export const ButtonTypes = styled("button", {
       },
     },
   ],
+  defaultVariants: {
+    color: "primary",
+    size: "sm",
+    radius: "sm",
+  },
 });

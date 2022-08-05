@@ -5,6 +5,7 @@ interface ButtonProps {
   color: "primary" | "secondary";
   size: "sm" | "md" | "lg";
   type: "button" | "submit";
+  radius?: "sm" | "md" | "lg" | "full";
   outline?: boolean;
   plain?: boolean;
 }
@@ -13,6 +14,7 @@ export function Button({
   color,
   size,
   type,
+  radius,
   outline,
   plain,
   children,
@@ -22,6 +24,7 @@ export function Button({
       type={type}
       color={color}
       size={size}
+      radius={radius}
       outlined={outline}
       plain={plain}
     >

@@ -4,14 +4,25 @@ import { styled } from "../styles/theme";
 import { ReactComponent as Logo } from "../assets/svg-2.svg";
 import HeroIcon from "./hero-icon";
 
-export const NavContainer = styled("nav", {
+export const HeaderContainer = styled("header", {
   display: "flex",
   backgroundColor: "$background",
   height: "88px",
   justifyContent: "center",
   alignItems: "center",
-  paddingLeft: "1rem",
-  paddingRight: "1rem",
+  boxShadow: "inset 0 -2px 0 #386475",
+});
+
+export const NavWrapper = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  width: "100%",
+  marginLeft: "1rem",
+  marginRight: "1rem",
+  "@md": {
+    width: "1120px",
+  },
 });
 
 export const Nav = styled("ul", {
@@ -26,23 +37,16 @@ export const Nav = styled("ul", {
 
 export const NavItem = styled(NavLink, {
   display: "block",
-  padding: ".75rem 1.5rem",
+  padding: "2rem 1.5rem",
   color: "$support",
   fontWeight: "700",
-  transition: "all 0.3s ease",
   "&.active": {
-    borderBottom: "1px solid $primary",
+    borderBottom: "2px solid $primary",
     color: "White",
   },
-});
-
-export const NavWrapper = styled("div", {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  width: "100%",
-  "@md": {
-    width: "1120px",
+  "&:hover": {
+    borderBottom: "2px solid $primary",
+    color: "White",
   },
 });
 

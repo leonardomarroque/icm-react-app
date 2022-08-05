@@ -40,6 +40,9 @@ export const SocialIcon = styled(Icon, {
   width: "2rem",
   height: "2rem",
   fill: "$secondary",
+  "&:hover": {
+    fill: "$primary",
+  },
 });
 
 export const HeartIcon = styled(HeroIcon, {
