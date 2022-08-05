@@ -1,7 +1,18 @@
 import { flexRender, Table } from "@tanstack/react-table";
 import React from "react";
 import { Louvor } from "../lib/api";
-import { StyledTable, StyledTableBodyRow, StyledTableHeadRow, StyledTd, StyledTh, TableContainer } from "./table-layout.css";
+import HeroIcon from "./hero-icon";
+import {
+  ContainerIcon,
+  StyledSortIcon,
+  StyledTable,
+  StyledTableBodyRow,
+  StyledTableHead,
+  StyledTableHeadRow,
+  StyledTd,
+  StyledTh,
+  TableContainer,
+} from "./table-layout.css";
 
 interface TableLayoutProps {
   table: Table<Louvor>;
@@ -11,22 +22,35 @@ function TableLayout({ table }: TableLayoutProps) {
   return (
     <TableContainer>
       <StyledTable>
-        <thead>
+        <StyledTableHead>
           {table.getHeaderGroups().map((headerGroup) => (
             <StyledTableHeadRow key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <StyledTh key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
+                  {header.isPlaceholder ? null : (
+                    <ContainerIcon
+                      {...{
+                        className: header.column.getCanSort()
+                          ? "cursor-pointer select-none"
+                          : "",
+                        onClick: header.column.getToggleSortingHandler(),
+                      }}
+                    >
+                      {flexRender(
                         header.column.columnDef.header,
                         header.getContext()
                       )}
+                      {{
+                        asc: <StyledSortIcon icon="ChevronDownIcon" />,
+                        desc: <StyledSortIcon icon="ChevronUpIcon" />,
+                      }[header.column.getIsSorted() as string] ?? null}
+                    </ContainerIcon>
+                  )}
                 </StyledTh>
               ))}
             </StyledTableHeadRow>
           ))}
-        </thead>
+        </StyledTableHead>
         <tbody>
           {table.getRowModel().rows.map((row) => (
             <StyledTableBodyRow key={row.id}>
@@ -38,27 +62,7 @@ function TableLayout({ table }: TableLayoutProps) {
             </StyledTableBodyRow>
           ))}
         </tbody>
-        {/* <tfoot>
-          {table.getFooterGroups().map((footerGroup) => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.footer,
-                        header.getContext()
-                      )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </tfoot> */}
       </StyledTable>
-      {/* <div className="h-4" />
-      <button onClick={() => rerender()} className="border p-2">
-        Rerender
-      </button> */}
     </TableContainer>
   );
 }
